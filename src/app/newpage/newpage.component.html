@@ -1,4 +1,6 @@
-<h2 class="header">Table</h2>
+
+<!-- <h2 class="header">Table</h2>
+<form [formGroup]="finalForm" (ngSubmit)="onEdit()"> -->
 <table class="table-bordered">
   <thead>
     <tr>
@@ -38,5 +40,10 @@
       <td>Employee ID</td>
       <td>{{data.num}}</td>
     </tr>
+    <!-- <div class="form-group"> -->
+      <hr><hr>
+    <div>
+      <button class="btn btn-primary" (click)="redirect()">Edit</button>
+  </div>
   </tbody>
 </table>

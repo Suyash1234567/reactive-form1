@@ -3,11 +3,11 @@ import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-home',
-  templateUrl: './home.component.html',
-  styleUrls: ['./home.component.css']
+  selector: 'app-first',
+  templateUrl: './first.component.html',
+  styleUrls: ['./first.component.css']
 })
-export class HomeComponent implements OnInit {
+export class FirstComponent implements OnInit {
   registerForm: FormGroup;
   submitted = false;
   textBoxType="password";
@@ -25,13 +25,13 @@ export class HomeComponent implements OnInit {
   ngOnInit() {
     console.log('hello');
     this.registerForm = this.formBuilder.group({
-      firstName: [this.data.firstName, [Validators.required, Validators.pattern(this.unamePattern)]],
-      lastName: [this.data.lastName, [Validators.required, Validators.pattern(this.unamePattern)]],
-      gender: [this.data.gender, [Validators.required, Validators.pattern(this.unamePattern)]],
-      phn: [this.data.phn, [Validators.required, Validators.pattern(this.mobnumPattern)]],
-      password: [this.data.password, [Validators.required, Validators.minLength(8), Validators.maxLength(16)]],
-      confpassword: [this.data.confpassword, [Validators.required, Validators.minLength(8), Validators.maxLength(16)]],
-      num: [this.data.num, [Validators.required, Validators.pattern(this.empidPAttern)]],
+      firstName: ['', [Validators.required, Validators.pattern(this.unamePattern)]],
+      lastName: ['', [Validators.required, Validators.pattern(this.unamePattern)]],
+      gender: ['', [Validators.required, Validators.pattern(this.unamePattern)]],
+      phn: ['', [Validators.required, Validators.pattern(this.mobnumPattern)]],
+      password: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(16)]],
+      confpassword: ['', [Validators.required, Validators.minLength(8), Validators.maxLength(16)]],
+      num: ['', [Validators.required, Validators.pattern(this.empidPAttern)]],
     });
   }
 

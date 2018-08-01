@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-newpage',
@@ -7,12 +8,18 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NewpageComponent implements OnInit {
   data: any;
-  constructor() { }
+  constructor(private router:Router) {
+   }
 
   ngOnInit() {
     this.data = JSON.parse(localStorage.getItem('dd'));
 
     console.log(this.data);
+  }
+
+  redirect() {
+    console.log('we')
+    this.router.navigate(['/edit']);
   }
 
 }

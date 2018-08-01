@@ -5,6 +5,7 @@ import { AppRoutingModule } from './app.routing';
 import { AppComponent } from './app.component';
 import { NewpageComponent } from './newpage/newpage.component';
 import { HomeComponent } from './home/home.component';
+import { FirstComponent } from './first/first.component';
 
 @NgModule({
     imports: [
@@ -15,7 +16,8 @@ import { HomeComponent } from './home/home.component';
     declarations: [
         AppComponent,
         NewpageComponent,
-        HomeComponent
+        HomeComponent,
+        FirstComponent
     ],
     bootstrap: [AppComponent]
 })
