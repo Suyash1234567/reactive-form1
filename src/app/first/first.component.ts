@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { Router } from '@angular/router';
+import { ServicefirstService } from '../servicefirst.service';
 
 @Component({
   selector: 'app-first',
@@ -18,8 +19,8 @@ export class FirstComponent implements OnInit {
   emailPattern = "^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$";
   empidPAttern = "^[0-9]{4}$";
   data;
-  constructor(private formBuilder: FormBuilder , private router:Router) { 
-    this.data = JSON.parse(localStorage.getItem('dd'));
+  constructor(private formBuilder: FormBuilder , private router:Router,private ServicefirstService : ServicefirstService) { 
+   // this.data = JSON.parse(localStorage.getItem('dd'));
   }
 
   ngOnInit() {
@@ -56,9 +57,10 @@ export class FirstComponent implements OnInit {
       alert("Both the password fields doesn't match");
       return;
     }
-    console.log('hh', this.registerForm.value);
-    localStorage.setItem("dd", JSON.stringify(this.registerForm.value)); //dd is KEY (string key here) whereas json part is value
-    this.router.navigate(['/newpage']); 
+   // console.log('hh', this.registerForm.value);
+   // localStorage.setItem("dd", JSON.stringify(this.registerForm.value)); //dd is KEY (string key here) whereas json part is value
+   this.ServicefirstService.datadalo(this.registerForm.value);
+   this.router.navigate(['/newpage']); 
     //alert(localStorage.getItem("firstName"));
     // console.log(this.registerForm.controls["firstName"]["value"]);
     //alert(this.registerForm.controls[0])

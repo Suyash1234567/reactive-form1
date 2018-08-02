@@ -6,7 +6,7 @@ import { AppComponent } from './app.component';
 import { NewpageComponent } from './newpage/newpage.component';
 import { HomeComponent } from './home/home.component';
 import { FirstComponent } from './first/first.component';
-
+import { ServicefirstService } from './servicefirst.service';
 @NgModule({
     imports: [
         BrowserModule,
@@ -19,6 +19,7 @@ import { FirstComponent } from './first/first.component';
         HomeComponent,
         FirstComponent
     ],
+    providers:[ServicefirstService],
     bootstrap: [AppComponent]
 })
 

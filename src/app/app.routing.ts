@@ -7,8 +7,8 @@ import { FirstComponent } from './first/first.component';
 const routes: Routes = [
     { path: '', component: FirstComponent },
     { path: 'newpage', component: NewpageComponent },
-    { path: 'edit', component: HomeComponent },
-    { path: 'first', component: FirstComponent }
+    { path: 'edit', component: HomeComponent }
+
     
 ];
 
